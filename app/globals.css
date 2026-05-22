@@ -417,6 +417,7 @@ a {
 .field {
   display: grid;
   gap: 8px;
+  min-width: 0;
 }
 
 .field span {
@@ -430,6 +431,8 @@ a {
 .field select,
 .field textarea {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 46px;
   border: 1px solid rgba(240, 240, 240, 0.14);
   border-radius: var(--radius);
@@ -437,6 +440,20 @@ a {
   background: rgba(18, 18, 26, 0.86);
   outline: none;
   padding: 0 12px;
+}
+
+.field input[type="date"] {
+  display: block;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field input[type="date"]::-webkit-date-and-time-value {
+  min-width: 0;
+  margin: 0;
+  text-align: left;
 }
 
 .field textarea {
@@ -586,6 +603,15 @@ a {
 .integration-panel,
 .analytics-panel {
   padding: 18px;
+}
+
+.editor-panel > .field {
+  margin-top: 14px;
+}
+
+.editor-panel > .primary-action {
+  min-height: 54px;
+  margin-top: 18px;
 }
 
 .panel-heading {
@@ -1741,7 +1767,8 @@ a {
   }
 
   .hero-band {
-    padding-top: 26px;
+    gap: 20px;
+    padding: 26px 22px;
   }
 
   .admin-command-strip {
@@ -1753,6 +1780,47 @@ a {
   .auth-panel h1 {
     font-size: clamp(2.2rem, 14vw, 3.3rem);
     line-height: 1.02;
+  }
+
+  .hero-band h1 {
+    max-width: 100%;
+    font-size: clamp(1.72rem, 8.8vw, 2.55rem);
+    line-height: 1.08;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+
+  .field input[type="date"] {
+    font-size: 1rem;
+    line-height: 1.2;
+    padding-right: 10px;
+  }
+
+  .field input[type="date"]::-webkit-date-and-time-value {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .editor-panel,
+  .integration-panel,
+  .analytics-panel,
+  .toolbar {
+    padding: 16px;
+  }
+
+  .editor-panel > .field {
+    margin-top: 16px;
+  }
+
+  .editor-panel > .primary-action {
+    min-height: 58px;
+    margin-top: 22px;
   }
 
   .metric-grid,
