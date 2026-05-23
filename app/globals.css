@@ -444,13 +444,20 @@ a {
 
 .field input[type="date"] {
   display: block;
+  height: 46px;
+  min-height: 46px;
   min-inline-size: 0;
   max-inline-size: 100%;
   appearance: none;
   -webkit-appearance: none;
+  line-height: 46px;
+  padding-block: 0;
 }
 
 .field input[type="date"]::-webkit-date-and-time-value {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   min-width: 0;
   margin: 0;
   text-align: left;
@@ -1796,13 +1803,17 @@ a {
   }
 
   .field input[type="date"] {
+    height: 44px;
+    min-height: 44px;
     font-size: 1rem;
-    line-height: 1.2;
+    line-height: 44px;
     padding-right: 10px;
   }
 
   .field input[type="date"]::-webkit-date-and-time-value {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 42px;
     width: 100%;
     text-align: left;
   }
